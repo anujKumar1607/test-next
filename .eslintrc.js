@@ -12,12 +12,12 @@ export const parserOptions = {
   sourceType: 'module',
 };
 export const plugins = ['react', 'prettier'];
-export const rules = {
-  'react/react-in-jsx-scope': 'off',
-  'react/jsx-uses-react': 'off',
-  'react/prop-types': 'off',
-  'no-unused-vars': 'warn', // Make unused vars warnings instead of errors
-};
+// export const rules = {
+//   'react/react-in-jsx-scope': 'off',
+//   'react/jsx-uses-react': 'off',
+//   'react/prop-types': 'off',
+//   'no-unused-vars': 'warn', // Make unused vars warnings instead of errors
+// };
 export const settings = {
   react: {
     version: '18.2.0', // Explicitly set your React version (or 'detect')
