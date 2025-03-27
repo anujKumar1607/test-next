@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <div className="text-center font-bold text-[40px]">
-        List of All Latest Books
+        List of All Latest Books using docker
       </div>
       <Banner />
       <ProductList />
