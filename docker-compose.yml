@@ -3,6 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    image: coolanuj042/test-next-app
     ports:
       - "3000:3000"
     env_file:
