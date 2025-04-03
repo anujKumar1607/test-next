@@ -21,15 +21,21 @@ const ProductList = async () => {
     },
   ];
 
-  // const response = await fetch('https://jsonplaceholder.typicode.com/users', { cache: 'no-store' });
-  // if(!response){
-  //     throw new Error("An Error occured while fetching the users...");
-  // }
-  // const users = await response.json();
+  const response = await fetch('http://localhost:3001/api/posts', {
+    cache: 'no-store',
+  });
+  if (!response) {
+    throw new Error('An Error occured while fetching the users...');
+  }
+  const posts = await response.json();
+
   return (
     <div className="grid grid-cols-1 gap-8 md:grid-cols-3 max-w-7xl mx-auto mb-10">
-      {users.map((user) => (
+      {/* {users.map((user) => (
         <Product key={user.id} user={user} />
+      ))} */}
+      {posts.data.map((post) => (
+        <Product key={post.id} post={post} />
       ))}
     </div>
   );

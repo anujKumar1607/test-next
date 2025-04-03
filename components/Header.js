@@ -1,10 +1,14 @@
+'use client';
 import Link from 'next/link';
 import Image from 'next/image';
 import logo from '../public/logo.png';
 import Man from '../public/man.png';
 import { HiSearch, HiBell, HiChat } from 'react-icons/hi';
+import { useSession, signIn, signOut } from 'next-auth/react';
 
 export default function Header() {
+  const { data: session } = useSession();
+  //console.log('session', session);
   return (
     // <header>
     //   <div className="container">
@@ -42,6 +46,23 @@ export default function Header() {
       </div>
       <HiBell className="text-[25px] md:text-[60px] text-gray-500 cursor-pointer" />
       <HiChat className="text-[25px] md:text-[60px] text-gray-500 cursor-pointer" />
+      {session?.user?.email ? (
+        <Image
+          onClick={() => router.push('/' + session?.user?.email)}
+          src={Man}
+          alt="man"
+          width={50}
+          height={50}
+          className="hover:bg-gray-300 rounded-full p-2 cursor-pointer"
+        />
+      ) : (
+        <button
+          onClick={() => signIn()}
+          className="font-semibold p-2 rounded-full px-2"
+        >
+          Login
+        </button>
+      )}
     </div>
   );
 }
