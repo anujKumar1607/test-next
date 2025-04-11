@@ -5,7 +5,7 @@ services:
       dockerfile: Dockerfile
     image: coolanuj042/test-next-app
     ports:
-      - "3000:3000"
+      - "3001:3001"
     env_file:
       - .env.production
     healthcheck:

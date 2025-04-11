@@ -23,7 +23,7 @@ const fetcher = async (url) => {
 
 export default function BlogsPage() {
   const { data, error, isLoading } = useSWR(
-    'http://localhost:3000/api/post',
+    `${process.env.API_URL}/post`,
     fetcher
   );
 

@@ -166,7 +166,7 @@ export default function CreatePost() {
       }
 
       // Submit to your Node.js API endpoint
-      const response = await fetch('http://localhost:3000/api/posts', {
+      const response = await fetch(`${process.env.API_URL}/posts`, {
         method: 'POST',
         body: formDataToSend,
         credentials: 'include',

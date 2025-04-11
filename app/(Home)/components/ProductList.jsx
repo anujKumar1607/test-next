@@ -21,7 +21,7 @@ const ProductList = async () => {
     },
   ];
 
-  const response = await fetch('http://localhost:3000/api/posts', {
+  const response = await fetch(`${process.env.API_URL}/posts`, {
     cache: 'no-store',
   });
   if (!response) {
